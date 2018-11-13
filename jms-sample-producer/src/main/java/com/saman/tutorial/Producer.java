@@ -6,7 +6,7 @@ import javax.jms.JMSContext;
 import javax.jms.JMSProducer;
 import javax.jms.Queue;
 
-public class MessageSender {
+public class Producer {
 
     @Resource(mappedName = "jms/sampleConnectionFactory")
     private static ConnectionFactory connectionFactory;
@@ -28,6 +28,6 @@ public class MessageSender {
     }
 
     public static void main(String[] args) {
-        new MessageSender().produceMessages();
+        new Producer().produceMessages();
     }
 }

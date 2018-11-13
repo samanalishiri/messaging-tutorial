@@ -3,8 +3,9 @@ install domain on glassfish (local.host)
 create jms connection factory (jms/sampleConnectionFactory)
 create jms queue (jms/sampleQueue)
 
+open command line
 mvn clean package
-appclient -client target/jms-sample
+appclient -client target/jms-sample-producer.jar
 
 output
 Nov 13, 2018 2:29:27 PM org.hibernate.validator.internal.util.Version <clinit>

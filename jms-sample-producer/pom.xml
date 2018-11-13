@@ -10,10 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.saman.tutorial</groupId>
-    <artifactId>jms-sample</artifactId>
+    <artifactId>jms-sample-producer</artifactId>
     <packaging>app-client</packaging>
 
-    <name>JMS Sample</name>
+    <name>JMS Sample Producer</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -46,7 +46,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.saman.tutorial.MessageSender</mainClass>
+                            <mainClass>com.saman.tutorial.Producer</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
