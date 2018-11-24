@@ -10,6 +10,7 @@
   <modules>
     <module>jms-sample</module>
       <module>rabbitmq-sample-client-java</module>
+      <module>activemq-sample-client</module>
   </modules>
   <packaging>pom</packaging>
 
