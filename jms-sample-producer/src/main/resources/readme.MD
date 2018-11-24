@@ -1,13 +1,15 @@
+##prerequisite
 install glassfish 5.0
 install domain on glassfish (local.host)
 create jms connection factory (jms/sampleConnectionFactory)
 create jms queue (jms/sampleQueue)
 
+## build & run
 open command line
 mvn clean package
 appclient -client target/jms-sample-producer.jar
 
-output
+##output
 Nov 13, 2018 2:29:27 PM org.hibernate.validator.internal.util.Version <clinit>
 INFO: HV000001: Hibernate Validator 6.0.2.Final
 Nov 13, 2018 2:29:29 PM com.sun.messaging.jms.ra.ResourceAdapter start
