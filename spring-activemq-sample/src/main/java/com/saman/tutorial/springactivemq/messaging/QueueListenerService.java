@@ -1,17 +1,15 @@
 package com.saman.tutorial.springactivemq.messaging;
 
-import com.saman.tutorial.springactivemq.model.MessageModel;
-import com.saman.tutorial.springactivemq.model.ProductStatus;
-import com.saman.tutorial.springactivemq.service.ProductService;
+import com.saman.tutorial.springactivemq.model.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
-import org.springframework.messaging.Message;
-import org.springframework.messaging.MessageHeaders;
+import org.springframework.messaging.handler.annotation.Headers;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 import javax.jms.JMSException;
+import java.util.Map;
 
 import static com.saman.tutorial.springactivemq.config.MessagingConfiguration.PRODUCT_QUEUE;
 
@@ -20,19 +18,11 @@ public class QueueListenerService {
 
     private static final Logger LOG = LoggerFactory.getLogger(QueueListenerService.class);
 
-    @Autowired
-    private ProductService productService;
+    @JmsListener(containerFactory = "jmsListenerContainerFactory", destination = PRODUCT_QUEUE)
+    public void receiveMessage(@Payload Product product,
+                               @Headers Map<String, Object> headers) throws JMSException {
 
-    @JmsListener(destination = PRODUCT_QUEUE)
-    public void receiveMessage(final Message<MessageModel> message) throws JMSException {
-
-        MessageHeaders headers = message.getHeaders();
-        LOG.info("Application : headers received : {}", headers);
-
-        MessageModel model = message.getPayload();
-        LOG.info("Application : model received : {}", model);
-
-        productService.updateStatus(model.getProductId(), ProductStatus.getByCode(model.getReturnCode()));
+        LOG.info("Application : message received : {}", product);
     }
 
 }

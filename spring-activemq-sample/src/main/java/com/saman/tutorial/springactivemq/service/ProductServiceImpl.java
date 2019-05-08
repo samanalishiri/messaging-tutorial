@@ -1,14 +1,14 @@
 package com.saman.tutorial.springactivemq.service;
 
-import java.util.Map;
-
+import com.saman.tutorial.springactivemq.messaging.MessageService;
 import com.saman.tutorial.springactivemq.model.Product;
 import com.saman.tutorial.springactivemq.model.ProductStatus;
-import com.saman.tutorial.springactivemq.messaging.MessageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Map;
 
 @Service("productService")
 public class ProductServiceImpl implements ProductService {
@@ -25,8 +25,6 @@ public class ProductServiceImpl implements ProductService {
 	public String save(Product model) {
 		String id = repository.save(model);
 		messageService.sendMessage(model);
-		LOG.info("Application : sending product request {}", model);
-
 		return id;
 	}
 

@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @ComponentScan(basePackages = "com.saman.tutorial")
-@Import({MessagingConfiguration.class, MessagingListenerConfiguration.class})
+@Import({MessagingConfiguration.class})
 @EnableWebMvc
 public class DispatcherConfig extends WebMvcConfigurerAdapter {
 
