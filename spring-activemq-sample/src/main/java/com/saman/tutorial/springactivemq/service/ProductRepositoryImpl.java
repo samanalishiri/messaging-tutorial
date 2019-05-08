@@ -15,10 +15,12 @@ public class ProductRepositoryImpl implements ProductRepository {
 	private final Map<String, Product> storage = new ConcurrentHashMap<>();
 	
 	@Override
-	public void save(Product product) {
+	public String save(Product product) {
 		product.setId(BasicUtil.getUniqueId());
 		product.setStatus(ProductStatus.CREATED);
 		storage.put(product.getId(), product);
+
+		return product.getId();
 	}
 
 	@Override

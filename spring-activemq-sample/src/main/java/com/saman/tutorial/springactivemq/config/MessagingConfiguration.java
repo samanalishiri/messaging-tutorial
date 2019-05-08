@@ -12,9 +12,7 @@ public class MessagingConfiguration {
 
     public static final String DEFAULT_BROKER_URL = "tcp://localhost:61616";
 
-    public static final String ORDER_QUEUE = "product-queue";
-    public static final String ORDER_RESPONSE_QUEUE = "product-response-queue";
-
+    public static final String PRODUCT_QUEUE = "product-queue";
 
     @Bean
     public ActiveMQConnectionFactory connectionFactory() {
@@ -28,7 +26,7 @@ public class MessagingConfiguration {
     public JmsTemplate jmsTemplate() {
         JmsTemplate template = new JmsTemplate();
         template.setConnectionFactory(connectionFactory());
-        template.setDefaultDestinationName(ORDER_QUEUE);
+        template.setDefaultDestinationName(PRODUCT_QUEUE);
         return template;
     }
 

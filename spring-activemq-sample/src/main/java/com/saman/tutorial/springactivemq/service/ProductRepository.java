@@ -6,7 +6,7 @@ import java.util.Map;
 
 public interface ProductRepository {
 
-    void save(Product product);
+    String save(Product product);
 
     Product findById(String id);
 

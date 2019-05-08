@@ -13,6 +13,8 @@
         <module>rabbitmq-sample-client-java</module>
         <module>activemq-sample-client-java</module>
         <module>spring-activemq-sample</module>
+        <module>camel-gateway</module>
+        <module>camel-gateway</module>
     </modules>
     <packaging>pom</packaging>
 
