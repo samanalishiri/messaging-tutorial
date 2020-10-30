@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.saman.tutorial</groupId>
-    <artifactId>integration-tutorial</artifactId>
+    <artifactId>messaging-tutorial</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>jms-sample-consumer</module>
@@ -13,12 +13,10 @@
         <module>rabbitmq-sample-client-java</module>
         <module>activemq-sample-client-java</module>
         <module>spring-activemq-sample</module>
-        <module>camel-gateway</module>
-        <module>camel-gateway</module>
     </modules>
     <packaging>pom</packaging>
 
-    <name>Integration Tutorial</name>
+    <name>Messaging Tutorial</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

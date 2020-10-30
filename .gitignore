@@ -2,5 +2,4 @@
 target 
 *.iml 
 .scannerwork 
-*.log 
-git-setup-spring-cloud-tutorial.bat 
+*.log
